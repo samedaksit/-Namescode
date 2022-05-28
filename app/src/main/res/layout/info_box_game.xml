@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/infoBoxGameTV1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/info_box_game_text_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/infoBoxGameTV2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/info_box_game_text_2"
+        app:layout_constraintEnd_toEndOf="@+id/infoBoxGameTV1"
+        app:layout_constraintStart_toStartOf="@+id/infoBoxGameTV1"
+        app:layout_constraintTop_toBottomOf="@+id/infoBoxGameTV1" />
+
+    <TextView
+        android:id="@+id/infoBoxGameTV3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/info_box_game_text_3"
+        app:layout_constraintEnd_toEndOf="@+id/infoBoxGameTV2"
+        app:layout_constraintStart_toStartOf="@+id/infoBoxGameTV2"
+        app:layout_constraintTop_toBottomOf="@+id/infoBoxGameTV2" />
+
+    <CheckBox
+        android:id="@+id/gameCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/do_not_show_again_cb"
+        app:layout_constraintStart_toStartOf="@+id/infoBoxGameTV3"
+        app:layout_constraintTop_toBottomOf="@+id/infoBoxGameTV3" />
+
+    <Button
+        android:id="@+id/oKButtonGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/default_blue_color"
+        android:text="@string/okay_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameCB"
+        tools:ignore="TextContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

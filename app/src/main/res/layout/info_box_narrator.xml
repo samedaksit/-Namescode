@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/infoBoxNarratorTV1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/info_box_narrator_text_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/infoBoxNarratorTV2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/info_box_narrator_text_2"
+        app:layout_constraintEnd_toEndOf="@+id/infoBoxNarratorTV1"
+        app:layout_constraintStart_toStartOf="@+id/infoBoxNarratorTV1"
+        app:layout_constraintTop_toBottomOf="@+id/infoBoxNarratorTV1" />
+
+    <TextView
+        android:id="@+id/infoBoxNarratorTV3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/info_box_narrator_text_3"
+        app:layout_constraintEnd_toEndOf="@+id/infoBoxNarratorTV2"
+        app:layout_constraintStart_toStartOf="@+id/infoBoxNarratorTV2"
+        app:layout_constraintTop_toBottomOf="@+id/infoBoxNarratorTV2" />
+
+    <CheckBox
+        android:id="@+id/narratorCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/do_not_show_again_cb"
+        app:layout_constraintStart_toStartOf="@+id/infoBoxNarratorTV2"
+        app:layout_constraintTop_toBottomOf="@+id/infoBoxNarratorTV3" />
+
+    <Button
+        android:id="@+id/okButtonNarrator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/default_blue_color"
+        android:text="@string/okay_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/narratorCB"
+        tools:ignore="TextContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

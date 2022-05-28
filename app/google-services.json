@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "978066941841",
+    "firebase_url": "https://namescode-b798f-default-rtdb.firebaseio.com",
+    "project_id": "namescode-b798f",
+    "storage_bucket": "namescode-b798f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978066941841:android:98ed0ac817e5630b8a1c30",
+        "android_client_info": {
+          "package_name": "com.samedaksit.namescode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978066941841-mbuslp08a07hhmll3cjptaie94gadg8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ6kuce8xC0ZYSmocxW4ZPGvWxj6gszIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978066941841-mbuslp08a07hhmll3cjptaie94gadg8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

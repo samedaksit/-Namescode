@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_reset_game"
+        android:icon="@drawable/ic_baseline_reset_24"
+        android:title="@string/reset_game"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/item_advice_word"
+        android:icon="@drawable/ic_baseline_post_add_24"
+        android:title="@string/advice_word"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/item_invite_friend_info"
+        android:icon="@drawable/ic_baseline_group_add_24"
+        android:title="@string/information"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/item_report_error"
+        android:icon="@drawable/ic_baseline_error_outline_24"
+        android:title="@string/report_error"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="min_height">48dp</dimen>
+    <dimen name="log_divider_height">1dp</dimen>
+    <dimen name="log_text_size">11sp</dimen>
+    <dimen name="card_text_size">10sp</dimen>
+    <dimen name="card_number_text_size">24sp</dimen>
+    <dimen name="spy_narrator_text_view_width">70dp</dimen>
+    <dimen name="join_button_width">64dp</dimen>
+    <dimen name="join_button_height">22dp</dimen>
+    <dimen name="log_recycler_view_width">110dp</dimen>
+    <dimen name="game_button_text_size">12sp</dimen>
+    <dimen name="get_give_clue_text_size">16sp</dimen>
+</resources>

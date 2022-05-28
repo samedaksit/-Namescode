@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background_color">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/fragmentGameToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="10dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/redTeamLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/corner_radius_only_bottom_right"
+        android:backgroundTint="@color/default_red_color"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/infoLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentGameToolbar">
+
+        <TextView
+            android:id="@+id/redSpyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/spy"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            tools:ignore="TextContrastCheck" />
+
+        <LinearLayout
+            android:id="@+id/redSpyLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/redSpyTV"
+                android:layout_width="@dimen/spy_narrator_text_view_width"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                tools:ignore="InefficientWeight" />
+
+            <Button
+                android:id="@+id/joinRedSpyButton"
+                android:layout_width="@dimen/join_button_width"
+                android:layout_height="@dimen/join_button_height"
+                android:backgroundTint="@color/default_button_color"
+                android:elevation="10dp"
+                android:fontFamily="serif"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/join"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/game_button_text_size"
+                tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/redNarratorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/narrator"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            tools:ignore="TextContrastCheck" />
+
+        <LinearLayout
+            android:id="@+id/redNarratorLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/redNarratorTV"
+                android:layout_width="@dimen/spy_narrator_text_view_width"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/joinRedNarratorButton"
+                android:layout_width="@dimen/join_button_width"
+                android:layout_height="@dimen/join_button_height"
+                android:backgroundTint="@color/default_button_color"
+                android:elevation="10dp"
+                android:fontFamily="serif"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/join"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/game_button_text_size"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/redTeamCardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginTop="8dp"
+            android:text="@string/redRemainingCardNumber"
+            android:textColor="@color/black"
+            android:textSize="@dimen/card_number_text_size"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/redTeamGiveClueLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/corner_radius_layout_red_give_get_clue"
+        android:padding="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/redTeamLayout"
+        app:layout_constraintEnd_toStartOf="@+id/redLogRV"
+        app:layout_constraintStart_toEndOf="@+id/redTeamLayout"
+        app:layout_constraintTop_toTopOf="@+id/redTeamLayout">
+
+        <EditText
+            android:id="@+id/redGiveClueET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/type_clue"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/get_give_clue_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/redWordNumberSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:dropDownWidth="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/redGiveClueButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/redGiveClueET"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/redGiveClueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/default_button_color"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/give_clue_button"
+            android:textColor="@color/black"
+            android:textSize="@dimen/game_button_text_size"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/redLogRV"
+        android:layout_width="@dimen/log_recycler_view_width"
+        android:layout_height="0dp"
+        android:background="@drawable/corner_radius_red_log_rv"
+        android:padding="4dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@+id/redTeamLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentGameToolbar"
+        tools:listitem="@layout/item_log_lv">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentGameToolbar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cardsRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:spanCount="5"
+            tools:itemCount="25"
+            tools:listitem="@layout/item_card">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/blueTeamLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/corner_radius_only_top_left"
+        android:backgroundTint="@color/default_blue_color"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/blueTeamCardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blueRemainingCardNumber"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/card_number_text_size"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/blueSpyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/spy"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/blueSpyTV"
+                android:layout_width="@dimen/spy_narrator_text_view_width"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/joinBlueSpyButton"
+                android:layout_width="@dimen/join_button_width"
+                android:layout_height="@dimen/join_button_height"
+                android:backgroundTint="@color/default_button_color"
+                android:elevation="10dp"
+                android:fontFamily="serif"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/join"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/game_button_text_size"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/blueNarrator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/narrator"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/blueNarratorTV"
+                android:layout_width="@dimen/spy_narrator_text_view_width"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/joinBlueNarratorButton"
+                android:layout_width="@dimen/join_button_width"
+                android:layout_height="@dimen/join_button_height"
+                android:backgroundTint="@color/default_button_color"
+                android:elevation="10dp"
+                android:fontFamily="serif"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/join"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/game_button_text_size"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/blueTeamGiveClueLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/corner_radius_layout_blue_give_get_clue"
+        android:padding="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/blueTeamLayout"
+        app:layout_constraintEnd_toStartOf="@+id/blueTeamLayout"
+        app:layout_constraintStart_toEndOf="@+id/blueLogRV"
+        app:layout_constraintTop_toTopOf="@+id/blueTeamLayout">
+
+        <EditText
+            android:id="@+id/blueGiveClueET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/type_clue"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/get_give_clue_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <Spinner
+            android:id="@+id/blueWordNumberSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/blueGiveClueButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blueGiveClueET"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/blueGiveClueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/default_button_color"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/give_clue_button"
+            android:textColor="@color/black"
+            android:textSize="@dimen/game_button_text_size"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/redTeamGuessingLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/corner_radius_layout_red_give_get_clue"
+        android:padding="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/redTeamLayout"
+        app:layout_constraintEnd_toStartOf="@+id/redLogRV"
+        app:layout_constraintStart_toEndOf="@+id/redTeamLayout"
+        app:layout_constraintTop_toTopOf="@+id/redTeamLayout">
+
+        <TextView
+            android:id="@+id/redGivenClueText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="@string/clue"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/get_give_clue_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/redEndGuessingButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/redEndGuessingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/default_button_color"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/end_guessing"
+            android:textColor="@color/black"
+            android:textSize="@dimen/game_button_text_size"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/redGivenClueText"
+            tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/blueTeamGuessingLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/corner_radius_layout_blue_give_get_clue"
+        android:padding="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/blueTeamLayout"
+        app:layout_constraintEnd_toStartOf="@+id/blueTeamLayout"
+        app:layout_constraintStart_toEndOf="@+id/blueLogRV"
+        app:layout_constraintTop_toTopOf="@+id/blueTeamLayout">
+
+        <TextView
+            android:id="@+id/blueGivenClueText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/clue"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/get_give_clue_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/blueEndGuessingButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/blueEndGuessingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/default_button_color"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/end_guessing"
+            android:textColor="@color/black"
+            android:textSize="@dimen/game_button_text_size"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blueGivenClueText"
+            tools:ignore="TextContrastCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/blueLogRV"
+        android:layout_width="@dimen/log_recycler_view_width"
+        android:layout_height="0dp"
+        android:background="@drawable/corner_radius_blue_log_rv"
+        android:padding="4dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/blueTeamLayout"
+        tools:listitem="@layout/item_log_lv" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/infoLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/corner_radius_layout_info"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/infoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck"
+            tools:text="things" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
